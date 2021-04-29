@@ -102,6 +102,12 @@ public class VizitkaController {
     return result;
   }
 
+  @PostMapping(value = "/detail", params = {"id"})
+  public String delete(int id) {
+    seznamVizitek.remove(id);
+    return "redirect:/";
+  }
+
   @GetMapping(path = "/nova")
   public ModelAndView append() {
     ModelAndView result = new ModelAndView("append");
